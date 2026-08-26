@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy to App Server') {
             steps {
                 sh '''
-                    ssh user@APP_SERVER_IP '
+                    ssh kali@192.168.1.10 '
                         docker pull $IMAGE_NAME:latest
                         docker stop my-java-app-container || true
                         docker rm my-java-app-container || true
