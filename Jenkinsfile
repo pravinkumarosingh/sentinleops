@@ -34,14 +34,14 @@ pipeline {
         }
         stage('Deploy to App Server') {
             steps {
-                sh '''
+                sh """
                     ssh kali@192.168.1.10 '
                         docker pull $IMAGE_NAME:latest
                         docker stop my-java-app-container || true
                         docker rm my-java-app-container || true
                         docker run -d --name my-java-app-container -p 8080:8080 $IMAGE_NAME:latest
                     '
-                '''
+                """
             }
         }
     }
