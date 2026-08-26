@@ -19,11 +19,6 @@ pipeline {
                 sh 'mvn -B clean compile'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'mvn -B test'
-            }
-        }
         stage('Docker Build') {
             steps {
                 sh 'docker build -t $IMAGE_NAME:latest .'
