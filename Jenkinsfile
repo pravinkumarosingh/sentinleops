@@ -6,7 +6,7 @@ pipeline {
     }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
-        IMAGE_NAME = 'yourdockerhubusername/my-java-app'
+        IMAGE_NAME = 'pravinkumarosingh/my-java-app'
     }
     stages {
         stage('Checkout') {
