@@ -48,7 +48,7 @@ pipeline {
             steps {
                 sh """
                     ssh pravinkumarsingh@192.168.1.3 '
-                        sleep 5
+                        sleep 20
                         docker ps --filter name=my-java-app-container --filter status=running | grep my-java-app-container
                     '
                 """
