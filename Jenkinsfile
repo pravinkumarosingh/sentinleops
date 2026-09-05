@@ -44,5 +44,15 @@ pipeline {
                 """
             }
         }
+        stage('Verify Deployment') {
+            steps {
+                sh """
+                    ssh kali@192.168.1.10 '
+                        sleep 5
+                        docker ps --filter name=my-java-app-container --filter status=running | grep my-java-app-container
+                    '
+                """
+            }
+        }
     }
 }
